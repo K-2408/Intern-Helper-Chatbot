@@ -1,7 +1,6 @@
 import { useState } from "react";
 import "./App.css";
 import Header from "./components/header";
-// require("dotenv").config();
 import "@chatscope/chat-ui-kit-styles/dist/default/styles.min.css";
 import {
   MainContainer,
@@ -12,19 +11,18 @@ import {
   TypingIndicator,
 } from "@chatscope/chat-ui-kit-react";
 
-process.env.REACT_APP_API_KEY;
-// "Explain things like you would to a 10 year old learning how to code."
+const REACT_APP_API_KEY = "YOUR_API_KEY_HERE";
 const systemMessage = {
   //  Explain things like you're talking to a software professional with 5 years of experience.
   role: "system",
   content:
-    "Explain things like you're talking to a person in danger or needs your help.",
+    "Explain things like you're talking to a software engineering intern",
 };
 
 function App() {
   const [messages, setMessages] = useState([
     {
-      message: "Hello, I'm Diva Guard! Ask me anything!",
+      message: "Hello, I'm intern helper! Ask me anything!",
       sentTime: "just now",
       sender: "ChatGPT",
     },
@@ -103,14 +101,14 @@ function App() {
     <>
       <Header></Header>
       <div className="App">
-        <div style={{ position: "relative", height: "700px", width: "360px" }}>
+        <div style={{ position: "relative", height: "700px", width: "1200px" }}>
           <MainContainer>
             <ChatContainer>
               <MessageList
                 scrollBehavior="smooth"
                 typingIndicator={
                   isTyping ? (
-                    <TypingIndicator content="Diva Guard is typing" />
+                    <TypingIndicator content="Intern Helper is typing" />
                   ) : null
                 }
               >
